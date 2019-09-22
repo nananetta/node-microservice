@@ -106,7 +106,7 @@ module.exports = function() {
         app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
     }
 
-    // Calling initConfig 
+    // Calling initConfig
     require('./initConfig')(app);
 
     // Config Public Folder for Static Content

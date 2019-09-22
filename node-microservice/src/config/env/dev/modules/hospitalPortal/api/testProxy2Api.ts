@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-    name: 'testProxyApi',
-    endpoint: '/proxy',
+    name: 'testProxy2Api',
+    endpoint: '/proxy2',
     method: 'GET',
     type: 'proxy',
     validation: {},
@@ -10,7 +10,7 @@ module.exports = {
     authorization: {},
     target: {
         host: 'https://reqres.in',
-        path: '/api/users/3',
+        path: '/api/users/2',
         method: 'GET'
     },
     requestInterceptor: {},
