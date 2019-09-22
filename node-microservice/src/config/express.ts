@@ -20,11 +20,9 @@ let express = require('express'),
     YAML = require('yamljs');
 
 let config = require('./config');
-import router from '../app/controllers/invokeroute.server.controller';
+// import router from '../app/controllers/invokeroute.server.controller';
 
 import { log } from '../app/utils/error.utils';
-// let schema = require('../schema/schema').schema;
-// import {schema as schema} from '../schema/schema';
 
 module.exports = function() {
     // Initialize express app
@@ -108,17 +106,8 @@ module.exports = function() {
         app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
     }
 
-    // Globbing routing files
-    // config.getGlobbedFiles('./**/routes/**/*.js').forEach(function(routePath) {
-    //     require(path.resolve(routePath))(app);
-    // });
-
-    // require('./initConfig')(app);
-
-    console.log('init config!!!!');
-    // const router = new express.Router();
-    console.log('s');
-    app.use('/hp', router);
+    // Calling initConfig 
+    require('./initConfig')(app);
 
     // Config Public Folder for Static Content
     app.use(express.static(path.join(__dirname, '../app/public')));
