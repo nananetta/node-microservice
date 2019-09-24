@@ -31,7 +31,7 @@ export default function(apiConfig) {
             let target = apiConfig.target.host + apiConfig.target.path;
             let options = {
                 url: target,
-                method: apiConfig.target.method,
+                method: apiConfig.target.method
                 // proxy: applicationConfig.proxy
             };
             axios
@@ -62,7 +62,8 @@ export default function(apiConfig) {
                 .catch(function(error) {
                     // console.log(error);
                     return res.status(error.status).jsonp(error.data);
-                });        });
+                });
+        });
     } else {
         console.log('No match http method with api config.');
     }

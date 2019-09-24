@@ -170,7 +170,7 @@
         "no-case-declarations": "error",
         "no-div-regex": "error",
         "no-else-return": [
-            "error",
+            "warn",
             {
                 "allowElseIf": false
             }

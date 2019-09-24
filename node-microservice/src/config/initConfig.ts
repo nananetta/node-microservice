@@ -6,6 +6,7 @@
 let path = require('path');
 let config = require('./config');
 import proxyRouter from '../app/controllers/proxyrouter.server.controller';
+import mockRouter from '../app/controllers/mockrouter.server.controller';
 
 /**
  * Module init function.
@@ -30,6 +31,10 @@ module.exports = function(app) {
                 let type = apiConfig.type;
                 if (type.toLowerCase() === 'mock') {
                     console.log('Create mock api');
+                    app.use(
+                        item.endpoint,
+                        mockRouter(item.moduleName, apiConfig)
+                    );
                 } else if (type.toLowerCase() === 'standard') {
                     console.log('Create standard api');
                 } else if (type.toLowerCase() === 'proxy') {

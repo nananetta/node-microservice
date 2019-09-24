@@ -53,7 +53,7 @@ const applicationConfig = () => {
                 password: 'Linefwd516'
             }
         }
-    }
+    };
 };
 
 export default applicationConfig;

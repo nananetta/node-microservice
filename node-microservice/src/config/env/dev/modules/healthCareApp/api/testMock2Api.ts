@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-    name: 'testMockApi',
-    endpoint: '/mock',
+    name: 'testMock2Api',
+    endpoint: '/mock2',
     method: 'GET',
     type: 'mock',
     validation: {},
