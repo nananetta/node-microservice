@@ -1,0 +1,14 @@
+{
+    "name": "testProxyApi",
+    "endpoint": "/proxy",
+    "type": "proxy",
+    "module": "hospitalPortal",
+    "validation": {},
+    "authentication": {},
+    "authorization": {},
+    "requestInterceptor": {},
+    "responseInterceptor": {},
+    "operation": {
+        "class": "hospitalPortalProxyController"
+    }
+}

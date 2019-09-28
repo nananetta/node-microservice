@@ -10,6 +10,9 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "allowJs": true,
         "sourceMap": true,
         "outDir": "dist",
         "baseUrl": "./",
@@ -19,7 +22,9 @@
         ]
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "src/config/**/*.json",
+        "src/config/**/*.js"
     ],
     "exclude": [
         "node_modules",

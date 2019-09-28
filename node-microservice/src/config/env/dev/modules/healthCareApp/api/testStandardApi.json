@@ -1,0 +1,14 @@
+{
+    "name": "testStandardApi",
+    "endpoint": "/std",
+    "type": "standard",
+    "module": "hospitalPortal",
+    "validation": {},
+    "authentication": {},
+    "authorization": {},
+    "requestInterceptor": {},
+    "responseInterceptor": {},
+    "operation": {
+        "class": "hospitalPortalStandardController"
+    }
+}

@@ -3,7 +3,7 @@
 
 import axios from 'axios';
 import { Router } from 'express';
-
+let path = require('path');
 const fs = require('fs');
 import { getRuleName } from '../utils/mockrule.utils';
 
@@ -43,20 +43,28 @@ export default function(moduleName, apiConfig) {
             let ruleName = getRuleName(mockRule, req);
             console.log('mock name: ' + ruleName);
             if (ruleName != undefined) {
-                console.log('current directory: ', __dirname);
-                let filePath = '/../../config/env/dev/modules/' + moduleName + '/api/' + ruleName + '/response.json';
+                let filePath =
+                    '/../../config/env/dev/modules/' +
+                    moduleName +
+                    '/api/' +
+                    ruleName +
+                    '/response.json';
+                filePath = path.resolve(path.join(__dirname, filePath));
                 console.log('filePath: ', filePath);
-                fs.readFile(__dirname + filePath, function(err, data) {
+                // let data = require(path.resolve(filePath));
+                // let response = JSON.parse(data);
+                // return res.status(200).jsonp(response);
+
+                fs.readFile(filePath, function(err, data) {
                     if (err) {
                         console.log('Read filePath error: ', err);
-                        //   done({message:"Invalid response file: "+err}, null);
                     } else {
                         let response = JSON.parse(data);
                         return res.status(200).jsonp(response);
                     }
                 });
             }
-            return res.status(200).jsonp('mock data');
+            // return res.status(200).jsonp('mock data');
         });
     } else if (apiConfig.method.toLowerCase() === 'post') {
         /**

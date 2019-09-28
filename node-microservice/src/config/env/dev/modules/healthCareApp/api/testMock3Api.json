@@ -1,0 +1,11 @@
+{
+    "name": "testMock3Api",
+    "endpoint": "/mock3",
+    "method": "GET",
+    "type": "mock",
+    "validation": {},
+    "authentication": {},
+    "authorization": {},
+    "requestInterceptor": {},
+    "responseInterceptor": {}
+}

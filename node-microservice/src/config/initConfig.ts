@@ -23,7 +23,7 @@ module.exports = function(app) {
         // Globbing each module configuration
         config
             .getGlobbedFiles(
-                './**/env/dev/modules/' + item.moduleName + '/api/*.js'
+                './**/env/dev/modules/' + item.moduleName + '/api/*.json'
             )
             .forEach(function(configPath) {
                 console.log('---------------------------');
